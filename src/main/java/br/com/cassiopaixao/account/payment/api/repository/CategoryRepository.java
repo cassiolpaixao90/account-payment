@@ -2,8 +2,8 @@ package br.com.cassiopaixao.account.payment.api.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import br.com.cassiopaixao.account.payment.api.model.category;
+import br.com.cassiopaixao.account.payment.api.model.Category;
 
-public interface CategoryRepository extends JpaRepository<category, Long>{
+public interface CategoryRepository extends JpaRepository<Category, Long>{
 	
 }
