@@ -32,7 +32,7 @@ public class AccountPaymentExceptionHandler extends ResponseEntityExceptionHandl
 			HttpHeaders headers, HttpStatus status, WebRequest request) {
 
 		String messageUser = messageSource.getMessage("message.invalid", null, LocaleContextHolder.getLocale());
-		String messageDeveloper = ex.getCause().toString();
+		String messageDeveloper = ex.getCause() != null ? ex.getCause().toString() : ex.toString();
 		List<Error> errors = Arrays.asList(new Error(messageUser, messageDeveloper));
 		return handleExceptionInternal(ex, errors, headers, HttpStatus.BAD_REQUEST, request);
 	}
