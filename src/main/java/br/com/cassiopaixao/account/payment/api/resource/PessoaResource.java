@@ -1,7 +1,5 @@
 package br.com.cassiopaixao.account.payment.api.resource;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
@@ -17,35 +15,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.cassiopaixao.account.payment.api.event.RecursoCriadoEvent;
-import br.com.cassiopaixao.account.payment.api.model.Category;
-import br.com.cassiopaixao.account.payment.api.repository.CategoryRepository;
+import br.com.cassiopaixao.account.payment.api.model.Pessoa;
+import br.com.cassiopaixao.account.payment.api.repository.PessoaRepository;
 
 @RestController
-@RequestMapping("/categories")
-public class CategoryResource {
+@RequestMapping("/pessoas")
+public class PessoaResource {
 
 	@Autowired
-	private CategoryRepository categoryRepository;
-	
+	private PessoaRepository pessoaRepository;
+
 	@Autowired
 	private ApplicationEventPublisher publisher;
-	
-	@GetMapping
-	public List<Category> getCategories(){
-		return categoryRepository.findAll();
-	}
-	
+
 	@PostMapping
-	public ResponseEntity<Category> createCategory(@Valid @RequestBody Category category, HttpServletResponse response) {
-		Category categRet = categoryRepository.save(category);
-		publisher.publishEvent(new RecursoCriadoEvent(this, response, category.getCode()));
-		return ResponseEntity.status(HttpStatus.CREATED).body(categRet);
+	public ResponseEntity<Pessoa> criar(@Valid @RequestBody Pessoa pessoa, HttpServletResponse response) {
+		Pessoa pessoaSalva = pessoaRepository.save(pessoa);
+		publisher.publishEvent(new RecursoCriadoEvent(this, response, pessoaSalva.getCodigo()));
+		return ResponseEntity.status(HttpStatus.CREATED).body(pessoaSalva);
 	}
-	
-	@GetMapping("/{code}")
-	public Category getCategoryById(@PathVariable Long code) {
-		return categoryRepository.findOne(code);
+
+	@GetMapping("/{codigo}")
+	public ResponseEntity<Pessoa> buscarPeloCodigo(@PathVariable Long codigo) {
+		Pessoa pessoa = pessoaRepository.findOne(codigo);
+		return pessoa != null ? ResponseEntity.ok(pessoa) : ResponseEntity.notFound().build();
 	}
-	
-	
+
 }
