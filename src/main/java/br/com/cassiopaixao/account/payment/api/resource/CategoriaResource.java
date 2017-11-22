@@ -43,8 +43,8 @@ public class CategoriaResource {
 	}
 	
 	@GetMapping("/{code}")
-	public Categoria getCategoryById(@PathVariable Long code) {
-		return categoryRepository.findOne(code);
+	public Categoria getCategoriaById(@PathVariable Long codigo) {
+		return categoryRepository.findOne(codigo);
 	}
 	
 }
