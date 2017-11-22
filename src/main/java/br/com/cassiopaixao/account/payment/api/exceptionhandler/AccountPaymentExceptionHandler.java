@@ -53,7 +53,7 @@ public class AccountPaymentExceptionHandler extends ResponseEntityExceptionHandl
 	}
 
 	private List<Error> createListErros(BindingResult bindingResult) {
-		List<Error> errors = new ArrayList<Error>();
+		List<Error> errors = new ArrayList<>();
 		for (FieldError fieldError : bindingResult.getFieldErrors()) {
 			String messageUser = messageSource.getMessage(fieldError, LocaleContextHolder.getLocale());
 			String messageDeveloper = fieldError.toString();

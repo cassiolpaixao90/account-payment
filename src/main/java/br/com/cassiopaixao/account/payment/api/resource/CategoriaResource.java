@@ -17,35 +17,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.cassiopaixao.account.payment.api.event.RecursoCriadoEvent;
-import br.com.cassiopaixao.account.payment.api.model.Category;
-import br.com.cassiopaixao.account.payment.api.repository.CategoryRepository;
+import br.com.cassiopaixao.account.payment.api.model.Categoria;
+import br.com.cassiopaixao.account.payment.api.repository.CategoriaRepository;
 
 @RestController
-@RequestMapping("/categories")
-public class CategoryResource {
+@RequestMapping("/categorias")
+public class CategoriaResource {
 
 	@Autowired
-	private CategoryRepository categoryRepository;
+	private CategoriaRepository categoryRepository;
 	
 	@Autowired
 	private ApplicationEventPublisher publisher;
 	
 	@GetMapping
-	public List<Category> getCategories(){
+	public List<Categoria> getCategories(){
 		return categoryRepository.findAll();
 	}
 	
 	@PostMapping
-	public ResponseEntity<Category> createCategory(@Valid @RequestBody Category category, HttpServletResponse response) {
-		Category categRet = categoryRepository.save(category);
-		publisher.publishEvent(new RecursoCriadoEvent(this, response, category.getCode()));
+	public ResponseEntity<Categoria> criarCategoria(@Valid @RequestBody Categoria categoria, HttpServletResponse response) {
+		Categoria categRet = categoryRepository.save(categoria);
+		publisher.publishEvent(new RecursoCriadoEvent(this, response, categoria.getCodigo()));
 		return ResponseEntity.status(HttpStatus.CREATED).body(categRet);
 	}
 	
 	@GetMapping("/{code}")
-	public Category getCategoryById(@PathVariable Long code) {
+	public Categoria getCategoryById(@PathVariable Long code) {
 		return categoryRepository.findOne(code);
 	}
-	
 	
 }

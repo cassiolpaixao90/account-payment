@@ -14,31 +14,33 @@ import javax.validation.constraints.Size;
  *
  */
 @Entity
-@Table(name = "category")
-public class Category {
+@Table(name = "categoria")
+public class Categoria {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long code;
+	private Long codigo;
 
 	@NotNull
 	@Size(min = 3, max = 20)
-	private String name;
+	private String nome;
 
-	public Long getCode() {
-		return code;
+	public Long getCodigo() {
+		return codigo;
 	}
 
-	public void setCode(Long code) {
-		this.code = code;
+	public void setCodigo(Long codigo) {
+		this.codigo = codigo;
 	}
 
-	public String getName() {
-		return name;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
+	
+	
 
 }
