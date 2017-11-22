@@ -24,6 +24,7 @@ import br.com.cassiopaixao.account.payment.api.event.RecursoCriadoEvent;
 import br.com.cassiopaixao.account.payment.api.exceptionhandler.AccountPaymentExceptionHandler.Error;
 import br.com.cassiopaixao.account.payment.api.model.Lancamento;
 import br.com.cassiopaixao.account.payment.api.repository.LancamentoRepository;
+import br.com.cassiopaixao.account.payment.api.repository.filter.LancamentoFilter;
 import br.com.cassiopaixao.account.payment.api.service.LancamentoService;
 import br.com.cassiopaixao.account.payment.api.service.exception.PessoaInexistenteOuInativoException;
 
@@ -44,8 +45,8 @@ public class LancamentoResource {
 	private MessageSource messageSource;
 	
 	@GetMapping
-	public List<Lancamento> getLancamentos(){
-		return lancamentoRepository.findAll();
+	public List<Lancamento> pesquisar(LancamentoFilter lancamentoFilter){
+		return lancamentoRepository.filtrar(lancamentoFilter);
 	}
 
 	@GetMapping("/{codigo}")

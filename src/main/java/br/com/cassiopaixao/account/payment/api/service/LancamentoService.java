@@ -25,7 +25,7 @@ public class LancamentoService {
 		if(pessoa == null || pessoa.isInativo()) {
 			throw new PessoaInexistenteOuInativoException();
 		}
-		return lancamentoRepository.save(pessoa);
+		return lancamentoRepository.save(lancamento);
 	}
 
 	
