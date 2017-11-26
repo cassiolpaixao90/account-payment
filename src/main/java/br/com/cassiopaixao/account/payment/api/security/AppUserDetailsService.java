@@ -15,7 +15,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import br.com.cassiopaixao.account.payment.api.config.Usuario;
+import br.com.cassiopaixao.account.payment.api.model.Usuario;
 import br.com.cassiopaixao.account.payment.api.repository.UsuarioRepository;
 
 @Service

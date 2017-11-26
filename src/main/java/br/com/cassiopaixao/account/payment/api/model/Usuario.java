@@ -1,4 +1,4 @@
-package br.com.cassiopaixao.account.payment.api.config;
+package br.com.cassiopaixao.account.payment.api.model;
 
 import java.util.List;
 
@@ -9,8 +9,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-
-import br.com.cassiopaixao.account.payment.api.model.Permissao;
 
 @Entity
 @Table(name = "usuario")

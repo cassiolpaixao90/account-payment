@@ -4,7 +4,7 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import br.com.cassiopaixao.account.payment.api.config.Usuario;
+import br.com.cassiopaixao.account.payment.api.model.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
