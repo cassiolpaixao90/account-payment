@@ -11,15 +11,12 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.crsh.shell.impl.command.system.help;
-
 public class CorsFilter implements Filter {
 	
 	private String originPermitida = "";
 
 	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -46,8 +43,6 @@ public class CorsFilter implements Filter {
 
 	@Override
 	public void destroy() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }
