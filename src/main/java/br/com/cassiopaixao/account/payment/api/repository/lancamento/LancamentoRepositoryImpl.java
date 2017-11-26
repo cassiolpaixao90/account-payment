@@ -18,6 +18,7 @@ import org.springframework.util.StringUtils;
 
 import br.com.cassiopaixao.account.payment.api.model.Lancamento;
 import br.com.cassiopaixao.account.payment.api.repository.filter.LancamentoFilter;
+import br.com.cassiopaixao.account.payment.api.repository.projection.ResumoLancamento;
 
 
 public class LancamentoRepositoryImpl implements LancamentoRepositoryQuery {
@@ -39,8 +40,33 @@ public class LancamentoRepositoryImpl implements LancamentoRepositoryQuery {
 		
 		return new PageImpl<>(query.getResultList(), pageable, total(lancamentoFilter));
 	}
+	
+	@Override
+	public Page<ResumoLancamento> resumir(LancamentoFilter lancamentoFilter, Pageable pageable) {
+		CriteriaBuilder builder = manager.getCriteriaBuilder();
+		CriteriaQuery<ResumoLancamento> criteria = builder.createQuery(ResumoLancamento.class);
+		Root<Lancamento> root = criteria.from(Lancamento.class);
+		
+		criteria.select(builder.construct(ResumoLancamento.class
+				, root.get("codigo")
+				, root.get("descricao")
+				, root.get("dataVencimento")
+				, root.get("dataPagamento")
+				, root.get("valor")
+				, root.get("tipo")
+				, root.get("categoria").get("nome")
+				, root.get("pessoa").get("nome")));
+		
+		Predicate[] predicates = criarRestricoes(lancamentoFilter, builder, root);
+		criteria.where(predicates);
+		
+		TypedQuery<ResumoLancamento> query = manager.createQuery(criteria);
+		adicionarRestricaoPaginacaoQuery(query, pageable);
+		
+		return new PageImpl<>(query.getResultList(), pageable, total(lancamentoFilter));
+	}
 
-	private void adicionarRestricaoPaginacaoQuery(TypedQuery<Lancamento> query, Pageable pageable) {
+	private void adicionarRestricaoPaginacaoQuery(TypedQuery<?> query, Pageable pageable) {
 
 		int paginaAtual = pageable.getPageNumber();
 		int totalRegistroPorPagina = pageable.getPageSize();
