@@ -10,6 +10,13 @@ These instructions will get you a copy of the project up and running on your loc
 
  -Java8
  -Spring Tools Suites (STS)
+ 
+### Technologies
+
+| Tech | Description |
+| --- | --- |
+| Java8 | List all new or modified files |
+| Spring Boot | Show file differences that haven't been staged |
 
 ### Installing
 
