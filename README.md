@@ -17,6 +17,14 @@ These instructions will get you a copy of the project up and running on your loc
 | --- | --- |
 | Java8 | List all new or modified files |
 | Spring Boot | Show file differences that haven't been staged |
+| JPA | Show file differences that haven't been staged |
+| FlyWay | Show file differences that haven't been staged |
+| MySql | Show file differences that haven't been staged |
+| JWT | Show file differences that haven't been staged |
+| OAuth2 | Show file differences that haven't been staged |
+| jackson 2 | Show file differences that haven't been staged |
+
+
 
 ### Installing
 
