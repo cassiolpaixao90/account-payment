@@ -16,7 +16,6 @@ import org.springframework.stereotype.Service;
 
 import br.com.cassiopaixao.account.payment.api.model.Usuario;
 import br.com.cassiopaixao.account.payment.api.repository.UsuarioRepository;
-
 @Service
 public class AppUserDetailsService implements UserDetailsService {
 
@@ -30,10 +29,9 @@ public class AppUserDetailsService implements UserDetailsService {
 		return new UsuarioSistema(usuario, getPermissoes(usuario));
 	}
 
-	public Collection<? extends GrantedAuthority> getPermissoes(Usuario usuario) {
+	private Collection<? extends GrantedAuthority> getPermissoes(Usuario usuario) {
 		Set<SimpleGrantedAuthority> authorities = new HashSet<>();
 		usuario.getPermissoes().forEach(p -> authorities.add(new SimpleGrantedAuthority(p.getDescricao().toUpperCase())));
 		return authorities;
 	}
-
 }
