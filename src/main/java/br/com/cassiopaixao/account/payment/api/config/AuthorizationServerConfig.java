@@ -38,9 +38,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 		.and().withClient("mobile")
 			.secret("m0b1l30")
 			.scopes("read")
-			.authorizedGrantTypes("password", "refresh_token");
-//			.accessTokenValiditySeconds(0)
-//			.refreshTokenValiditySeconds(0);
+			.authorizedGrantTypes("password", "refresh_token")
+			.accessTokenValiditySeconds(0)
+			.refreshTokenValiditySeconds(0);
 	}
 
 	@Override
