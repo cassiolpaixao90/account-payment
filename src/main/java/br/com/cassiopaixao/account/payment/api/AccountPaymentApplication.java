@@ -14,14 +14,4 @@ public class AccountPaymentApplication {
 		SpringApplication.run(AccountPaymentApplication.class, args);
 	}
 	
-//	 @Bean
-//	    public WebMvcConfigurer corsConfigurer() {
-//	        return new WebMvcConfigurerAdapter() {
-//	            @Override
-//	            public void addCorsMappings(CorsRegistry registry) {
-//	                registry.addMapping("/**").allowedOrigins("GET", "POST", "PUT", "DELETE")
-//	                        .allowedOrigins("http://localhost:4200");
-//	            }
-//	        };				
-//	    }
 }
