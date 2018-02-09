@@ -1,22 +1,25 @@
-# Pagamento de Conta
+# Spring Boot + Angular 5
+
+![spring-boot-angular4-boilerplate](https://raw.githubusercontent.com/Saka7/spring-boot-angular4-boilerplate/master/frontend/src/assets/images/favicon.png)
 
 Está é uma simples aplicação rest api para fornecer serviços ao angular4.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Estas instruções irão levá-lo a uma cópia do projeto em funcionamento em sua máquina local para fins de desenvolvimento e teste. Consulte os pré-requisitos para implantação do projeto.
 
-### Prerequisites
+### Pré-requisites
 
- -Java8
- -Spring Tools Suites (STS)
+- Java8
+- Spring Tools Suites (STS)
+- Maven 3
  
 ### Technologies
 
 | Tech | Description |
 | --- | --- |
-| Java8 | List all new or modified files |
-| Spring Boot | Show file differences that haven't been staged |
+| Java8 | [](https://projects.spring.io/spring-boot/) |
+| Spring Boot | [Spring Boot 1.5.10](https://projects.spring.io/spring-boot/)  |
 | JPA | Show file differences that haven't been staged |
 | FlyWay | Show file differences that haven't been staged |
 | MySql | Show file differences that haven't been staged |
@@ -28,11 +31,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
 
-Say what the step will be
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## License
 
