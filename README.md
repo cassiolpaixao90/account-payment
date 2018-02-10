@@ -13,6 +13,7 @@ Estas instruções irão levá-lo a uma cópia do projeto em funcionamento em su
 - Java8
 - Spring Tools Suites (STS)
 - Maven 3
+- Postman
  
 ### Technologies
 
