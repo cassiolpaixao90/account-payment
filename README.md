@@ -20,6 +20,7 @@ Estas instruções irão levá-lo a uma cópia do projeto em funcionamento em su
 | --- | --- |
 | Java8 | [http://www.oracle.com/technetwork/pt/java/javase/downloads/jre8-downloads-2133155.html](http://www.oracle.com/technetwork/pt/java/javase/downloads/jre8-downloads-2133155.html) |
 | Spring Boot | [https://projects.spring.io/spring-boot](https://projects.spring.io/spring-boot/)  |
+| Spring Security | [https://spring.io/guides](https://spring.io/guides)  |
 | JPA | [http://hibernate.org/orm/documentation/5.2/](http://hibernate.org/orm/documentation/5.2/) |
 | FlyWay | [https://flywaydb.org/getstarted/](https://flywaydb.org/getstarted/) |
 | MySql | [https://www.mysql.com/downloads/](https://www.mysql.com/downloads/) |
@@ -29,7 +30,29 @@ Estas instruções irão levá-lo a uma cópia do projeto em funcionamento em su
 
 
 
-### Installing
+## Installing
+
+### Steps to setup
+
+**1. Clone the application**
+
+```bash
+git clone https://github.com/cassiolpaixao90/spring-boot-api-angular-5.git
+```
+
+**2. Build and run the app using maven**
+
+```bash
+cd account_payment
+mvn package
+java -jar target/account_payment-0.0.1-SNAPSHOT.jar
+```
+
+Você também pode executar o aplicativo sem empacotá-lo usando -
+
+```bash
+mvn spring-boot:run
+```
 
 
 
