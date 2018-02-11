@@ -10,9 +10,10 @@ Estas instruções irão levá-lo a uma cópia do projeto em funcionamento em su
 
 ### Pré-requisites
 
-- Java8
+- Java 1.8.x
 - Spring Tools Suites (STS)
-- Maven 3
+- Maven 3.x.x
+- Postman
  
 ### Technologies
 
