@@ -2,7 +2,7 @@ package br.com.cassiopaixao.account.payment.api.config.property;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties("conta")
+@ConfigurationProperties("payment")
 public class AccountPaymentApiApplication {
 
 	private String originPermitida = "http://localhost:4200";
